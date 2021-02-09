@@ -7,7 +7,7 @@ $datas = array();
 
 if ($Config->get('last_login:enable'))
 {
-    if (!(exec('/usr/bin/lastlog --time 365 | /usr/bin/awk -F\' \' \'{ print $1";"$5, $4, $8, $6}\'', $users)))
+    if (!(exec('/usr/bin/lastlog --time 365 | /usr/bin/awk -F\' \' \'{ print $1";"$5, $4, $8, $7, $6}\'', $users)))
     {
         $datas[] = array(
             'user' => 'N.A',
@@ -22,9 +22,11 @@ if ($Config->get('last_login:enable'))
         {
             list($user, $date) = explode(';', $users[$i]);
 
+            $datetime = DateTime::createFromFormat("M D O H:i:s j", $date);
+
             $datas[] = array(
                 'user' => $user,
-                'date' => $date,
+                'date' => $datetime ? $datetime->format(DateTime::ATOM) : $date,
             );
         }
     }
