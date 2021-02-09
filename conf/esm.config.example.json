@@ -1,0 +1,51 @@
+{
+    "esm": {
+        "version": "2.5",
+        "website": "",
+        "check_updates": true,
+        "auto_refresh": 2,
+        "theme": "blue",
+        "custom_title": "Monitor - "
+    },
+    "cpu": {
+        "enable_temperature": true
+    },
+    "disk": {
+        "show_tmpfs": false,
+        "show_filesystem": true
+    },
+    "ping": {
+        "hosts": [
+            "www.google.com",
+            "www.facebook.com",
+            "www.twitter.com"
+        ]
+    },
+    "last_login": {
+        "enable": true,
+        "max": 5
+    },
+    "services": {
+        "show_port": true,
+        "list": [
+            {
+                "name": "Web Server",
+                "host": "localhost",
+                "port": 80,
+                "protocol": "tcp"
+            },
+            {
+                "name": "Plex server",
+                "host": "localhost",
+                "port": 32400,
+                "protocol": "tcp"
+            },
+            {
+                "name": "SSH",
+                "host": "localhost",
+                "port": 28,
+                "protocol": "tcp"
+            }
+        ]
+    }
+}
