@@ -24,14 +24,14 @@ if (count($Config->get('services:list')) > 0)
             if (Misc::isPidRunning($pidJdownloader)) {
                 $datas[] = [
                     'show_port' => false,
-                    'port'      => '',
+                    'port'      => 'N/A',
                     'name'      => $name,
                     'status'    => 1,
                 ];
             } else {
                 $datas[] = [
                     'show_port' => false,
-                    'port'      => '',
+                    'port'      => 'N/A',
                     'name'      => $name,
                     'status'    => 0,
                 ];
